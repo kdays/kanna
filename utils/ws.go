@@ -204,6 +204,7 @@ func (ws *WsConn) receiveMessage() {
 
 	ws.conn.SetPingHandler(func(ping string) error {
 		log.Printf("[%s] received [ping] %s", ws.Url, ping)
+		ws.SendPongMessage([]byte(ping))
 		ws.conn.SetReadDeadline(time.Now().Add(ws.ReadDeadLineTime))
 		return nil
 	})
