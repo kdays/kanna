@@ -24,9 +24,12 @@ var OrderStatusMaps = map[int]string{
 const OrderSideBuy = 1
 const OrderSideSell = 2
 
-const OrderExSidePlaceBuy = 4
-const OrderExSidePlaceSell = 5
-const OrderExSidePlaceCancel = 6
+const OrderExSidePlaceBuyAdd = 4
+const OrderExSidePlaceSellAdd = 5
+const OrderExSidePlaceBuyCancel = 6
+const OrderExSidePlanceSellCancel = 7
+const OrderExSidePlaceBuyUpdate = 8
+const OrderExSidePlaceSellUpdate = 9
 
 // 平台
 const MarketHuobi int = 1
