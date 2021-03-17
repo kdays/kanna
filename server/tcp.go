@@ -119,7 +119,9 @@ func (c *KannaTCPConnection) startReader() {
 			}
 
 			if msgLen > 1000 {
-				fmt.Println("message too large", msgLen)
+				fmt.Println("message too large, auto closing", msgLen)
+				c.Conn.Close()
+				return
 			}
 
 			if msgLen > 0 && msgLen < 1000 {
